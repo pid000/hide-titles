@@ -19,11 +19,13 @@ function hide_when_tile(client) {
     } else {
       if (client.noBorder == true) {
         client.noBorder = false
-        client.geometry = {
-          x: client.x,
-          y: client.y,
-          width: _width,
-          height: _height
+        if (_width >= 0 && _height >= 0) {
+          client.geometry = {
+            x: client.x,
+            y: client.y,
+            width: _width,
+            height: _height
+          }
         }
       }
     }
